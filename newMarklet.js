@@ -1,17 +1,17 @@
-	    <a href="
-	    javascript:(function(){
 walk(document.body);
 setTimeout(function() {
     walk(document.body);
 }, 1000);
  
 function walk(node) {
+    // Source: http://is.gd/mwZp7E
+ 
     var child, next;
  
     switch (node.nodeType) {
-        case 1: 
-        case 9:
-        case 11:
+        case 1: // Element
+        case 9: // Document
+        case 11: // Document fragment
             child = node.firstChild;
             while (child) {
                 next = child.nextSibling;
@@ -20,7 +20,7 @@ function walk(node) {
             }
             break;
  
-        case 3:
+        case 3: // Text node
             handleText(node);
             break;
     }
@@ -42,6 +42,3 @@ function handleText(textNode) {
  
     textNode.nodeValue = v;
 }
-})();
-	      ">Drumpf2
-	    </a>
